@@ -1,0 +1,82 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Authors: James P. Cohoon and Jack W. Davidson
+// Date: 7/15/96
+// $Revision: 1.3 $
+// $Name: $
+//
+//**************************************************************************
+// Class Label interface
+
+
+//
+// label.cpp - implementation for a label screen object
+//
+#include <assert.h>
+#include "label.h"
+
+Label::Label(SimpleWindow &Window, const Position &p,
+ const string &t, const color &textcolor,
+ const color &c) : WindowObject(Window, p),
+ TextColor(textcolor), BackgroundColor(c), Text(t) {
+	// No code needed!
+}
+Label::Label(SimpleWindow &Window, float XCoord, float YCoord,
+ const string &t, const color &textcolor,
+ const color &c) : WindowObject(Window,
+ Position(XCoord, YCoord)), TextColor(textcolor),
+ BackgroundColor(c), Text(t) {
+	// No code needed!
+}
+Label::Label(SimpleWindow &Window, const Position &p,
+ const char *t, const color &textcolor,
+ const color &c) : WindowObject(Window, p),
+ TextColor(textcolor), BackgroundColor(c), Text(t) {
+	// No code needed!
+}
+
+Label::Label(SimpleWindow &Window, float XCoord, float YCoord,
+ const char *t, const color &textcolor,
+ const color &c) : WindowObject(Window,
+ Position(XCoord, YCoord)), TextColor(textcolor),
+ BackgroundColor(c), Text(t) {
+	// No code needed!
+}
+
+Label::~Label() {
+   // No body needed
+}
+
+
+color Label::GetColor() const {
+   return BackgroundColor;
+}
+
+
+void Label::SetColor(const color &c) {
+   BackgroundColor = c;
+}
+
+
+void Label::Draw() {
+   Position Location = GetPosition();
+   Position UpperLeft(Location.GetXDistance() + 2.0,
+    Location.GetYDistance() + 2.0);
+   Position LowerRight(Location.GetXDistance() - 2.0,
+    Location.GetYDistance() - 2.0);
+   GetWindow().RenderText(GetPosition(), Text, TextColor, BackgroundColor);
+}
+
+
+void Label::Erase() {
+   GetWindow().RenderText(GetPosition(), Text, BackgroundColor, BackgroundColor);
+}

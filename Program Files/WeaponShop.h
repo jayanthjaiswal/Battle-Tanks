@@ -7,20 +7,20 @@ void WeaponShop(int NOP,int PlayerNo){//Generates weapon shop where players can 
     Count=0;
     ClearScreen();
     //Loading the Weaponshop Background for the Single Player
-    WeaponShopBmp.Load("WeaponShopBackground1.xpm"); 
+    WeaponShopBmp.Load("Images/WeaponShopBackground1.xpm"); 
     WeaponShopBmp.SetPosition(Position(0,-1.0));
 	WeaponShopBmp.Draw();
     
     
     if(PlayerNo==1)
     {//Loading the Weaponshop background for first player 
-    WeaponShopBmp.Load("WeaponShopBackground1.xpm"); 
+    WeaponShopBmp.Load("Images/WeaponShopBackground1.xpm"); 
     WeaponShopBmp.SetPosition(Position(0,-1.0));
 	 WeaponShopBmp.Draw();
         
     }
     else {//Loading the Weaponshop background for second player 
-    WeaponShopBmp.Load("WeaponShopBackground2.xpm"); 
+    WeaponShopBmp.Load("Images/WeaponShopBackground2.xpm"); 
     WeaponShopBmp.SetPosition(Position(0,-1.0));
 	WeaponShopBmp.Draw();
     
@@ -34,8 +34,8 @@ void WeaponShop(int NOP,int PlayerNo){//Generates weapon shop where players can 
     
     for(int i=1;i<=8;i++){
     
-        sprintf(IconBmp,"WeaponIcon%d.xpm",i);
-        sprintf(NameBmp,"WeaponName%d.xpm",i);
+        sprintf(IconBmp,"Images/WeaponIcon%d.xpm",i);
+        sprintf(NameBmp,"Images/WeaponName%d.xpm",i);
     
         WeaponIcon[i].Load(IconBmp); 
         PhotoPosition = Position(Width/16*3,Height/80*(24 + 6*i)) + Position(-0.5*WeaponIcon[i].GetWidth(),-0.5*WeaponIcon[i].GetHeight());
@@ -63,8 +63,8 @@ void WeaponSelection(){//User can select which weapon to fire.
     //i.e. on the selected side.
     for(int i=1;i<=8;i++){
     
-        sprintf(IconBmp,"WeaponIcon%d.xpm",i);
-        sprintf(NameBmp,"WeaponName%d.xpm",i);
+        sprintf(IconBmp,"Images/WeaponIcon%d.xpm",i);
+        sprintf(NameBmp,"Images/WeaponName%d.xpm",i);
 
         if( ((WeaponIcon[i].IsInside(MouseClick)&&Weapon1Chance[i-1]==0&&n==5)||(WeaponName[i].IsInside(MouseClick)&&Weapon1Chance[i-1]==0&&n==5))||
             ((WeaponIcon[i].IsInside(MouseClick)&&Weapon2Chance[i-1]==0&&n==6)||(WeaponName[i].IsInside(MouseClick)&&Weapon2Chance[i-1]==0&&n==6))|| 

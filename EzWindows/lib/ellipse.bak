@@ -1,0 +1,66 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Source File
+   FILE:        ellipse.cc
+   AUTHORS:     James P. Cohoon and Jack W. Davidson
+   EDITED BY:   Devon Lockwood
+   Time-stamp:  <97/01/17 18:48:43 dcl3a>
+
+   Description
+   ===========
+   The EllipseShape class provides the ability to draw ellipses 
+   in an EzWindow.
+*/
+#include "ellipse.h"
+
+
+EllipseShape::EllipseShape(SimpleWindow &iWindow,
+ const Position &iCenter, const color &iColor,
+ float iLength, float iHeight) :
+ Shape (iWindow, iCenter, iColor),
+ Length(iLength), Height(iHeight) {
+   // No body needed
+}
+
+float EllipseShape::GetLength() const {
+   return Length;
+}
+
+float EllipseShape::GetHeight() const {
+   return Height;
+}
+
+void EllipseShape::Draw() {
+   Position EllCenter(GetPosition());
+   Position UpperLeft (EllCenter + Position(-.5 * Length, -.5 * Height));
+   Position LowerRight(EllCenter + Position( .5 * Length,  .5 * Height));
+   GetWindow().RenderEllipse(UpperLeft, LowerRight, GetColor(), HasBorder());
+}
+
+void EllipseShape::Erase() {
+   Position EllCenter(GetPosition());
+   Position UpperLeft (EllCenter + Position(-.5 * Length, -.5 * Height));
+   Position LowerRight(EllCenter + Position( .5 * Length,  .5 * Height));
+   GetWindow().RenderEllipse(UpperLeft, LowerRight, White, HasBorder());
+}
+
+void EllipseShape::SetSize(float iLength, float iHeight) {
+   Length = iLength;
+   Height = iHeight;
+}
+

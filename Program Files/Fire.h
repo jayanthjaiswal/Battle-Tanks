@@ -87,11 +87,11 @@ void SingleShot(){//This function simulates trajectory and calculates damage for
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));//to calculate x and y
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	
 	while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){//To simulate the trajectory of shots	
-		t+=0.005;
+		t+=0.001;
 		if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
@@ -100,8 +100,8 @@ void SingleShot(){//This function simulates trajectory and calculates damage for
 		
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
-        W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+        W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 
@@ -129,15 +129,15 @@ void ThreeShots(){//Three shots weapon shoots three bullets at the same time
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	 //The function uses simple physics laws mapped into the screen by changing some scaling factors  
 	while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){	
 		if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
 		else {y = TerrainHeight[(int)(Width*10*6/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
-		t+=0.005;
+		t+=0.001;
       //The next part shows how the projectile moves in the space 
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
@@ -145,8 +145,8 @@ void ThreeShots(){//Three shots weapon shoots three bullets at the same time
 		W.Draw();
 		W.SetPosition(Position(x-0.1+t,y-0.1));
 		W.Draw();
-		W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+		W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 		ProjectileErase.SetPosition(Position(x-0.1-t,y-0.1));
@@ -176,15 +176,15 @@ void FiveShots(){//Five Shots weapong fires Five bullets at the same time
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	 //The function also uses simple physics laws mapped into the screen by changing some scaling factors  
 	while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){	
 		if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
 		else {y = TerrainHeight[(int)(Width*10*6/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
-		t+=0.005;
+		t+=0.001;
    //The next part shows how the projectiles moves in the space 
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
@@ -196,8 +196,8 @@ void FiveShots(){//Five Shots weapong fires Five bullets at the same time
 		W.Draw();
 		W.SetPosition(Position(x-0.1+2*t,y-0.1));
 		W.Draw();
-		W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+		W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 		ProjectileErase.SetPosition(Position(x-0.1-t,y-0.1));
@@ -234,21 +234,21 @@ void SpaceLaser(){//This weapon produces a beam of yellow laser which flashes on
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	//The function also uses simple physics laws mapped into the screen by changing some scaling factors
 	while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){	
 		if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
 		else {y = TerrainHeight[(int)(Width*10*6/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
-		t+=0.005;
+		t+=0.001;
         
 	//The motion of the weapon is shown here	
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
-        W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+        W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 
@@ -294,21 +294,21 @@ void EarthMover(){//The Earthmover destroys the terrain quite badly and takes th
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	//The function also uses simple physics laws mapped into the screen by changing some scaling factors
 	while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){	
 		if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
 		else {y = TerrainHeight[(int)(Width*10*6/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
-		t+=0.005;
+		t+=0.001;
         
 		//The terrain gets damaged in a circular manner with centre at the point of landing of the missile.
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
-        W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+        W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 
@@ -338,21 +338,21 @@ void Cruiser(){
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	//The function also uses simple physics laws mapped into the screen by changing some scaling factors
 	while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){	
 		if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
 		else {y = TerrainHeight[(int)(Width*10*6/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
-		t+=0.005;
+		t+=0.001;
         
 		//Traversal of the weapon
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
-        W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+        W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 
@@ -419,8 +419,8 @@ void SuperBullet(){//Super bullet is a weapon which defies gravity and also can 
 	t=0;
 	x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	W.Load("W.xpm");
-	ProjectileErase.Load("ProjectileErase.xpm");
+	W.Load("Images/W.xpm");
+	ProjectileErase.Load("Images/ProjectileErase.xpm");
 	
 	while(x<(Width)&&x>0&&y>0&&y<Height*5/6){	
 		if(PlayerNumber==1){x = Width/7+(0.5+t)*cos(theta);}
@@ -431,8 +431,8 @@ void SuperBullet(){//Super bullet is a weapon which defies gravity and also can 
         		
 		W.SetPosition(Position(x-0.1,y-0.1));
 		W.Draw();
-        W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+        W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 		ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		ProjectileErase.Draw();
 		if(t>1){
@@ -462,21 +462,21 @@ void PotShots(){
 	    t=0;
 	    x = (PlayerNumber==1)?(Width/7+0.4*cos(theta)):(Width*6/7-0.4*cos(theta));
 	    y = (PlayerNumber==1)?(TerrainHeight[(int)(Width*10/7)]-0.3-0.4*sin(theta)):(TerrainHeight[(int)(Width*10*6/7)]-0.3-0.4*sin(theta));
-	    W.Load("W.xpm");
-	    ProjectileErase.Load("ProjectileErase.xpm");
+	    W.Load("Images/W.xpm");
+	    ProjectileErase.Load("Images/ProjectileErase.xpm");
 	
 	    while(y<TerrainHeight[(int)(x*10)]&&x<(Width)&&x>0){	
 		    if(PlayerNumber==1){x = (Width/7) +0.5*cos(theta)+ velocity*cos(theta)*t+Wind*t/2.0;}
 		    else {x = (Width*6/7) -0.5*cos(theta)- velocity*cos(theta)*t+Wind*t/2.0;}
 		    if(PlayerNumber==1){y = TerrainHeight[(int)(Width*10/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
 		    else {y = TerrainHeight[(int)(Width*10*6/7)] - 0.4-0.4*sin(theta) - velocity*t*sin(theta) + g*t*t;}
-		    t+=0.005;
+		    t+=0.001;
             
 		
 		    W.SetPosition(Position(x-0.1,y-0.1));
 		    W.Draw();
-            W.Load("W.xpm");
-	        ProjectileErase.Load("ProjectileErase.xpm");
+            W.Load("Images/W.xpm");
+	        ProjectileErase.Load("Images/ProjectileErase.xpm");
 		    ProjectileErase.SetPosition(Position(x-0.1,y-0.1));
 		    ProjectileErase.Draw();
 
@@ -518,20 +518,20 @@ void GameOverScreen(){//code to be run when the game is over i.e when the health
 	
 	//to load corresponding bitmap as per result
 	if (Tank1Health>0){
-		Player1Wins.Load("WinPlayer1.xpm");
+		Player1Wins.Load("Images/WinPlayer1.xpm");
 		PhotoPosition = Position(Width/2-3.0,Height/2-5.0) ;
 		Player1Wins.SetPosition(PhotoPosition);
 		Player1Wins.Draw();
 	}
 	else {
 		if(NumberOfPlayers==2){
-			Player2Wins.Load("WinPlayer2.xpm");
+			Player2Wins.Load("Images/WinPlayer2.xpm");
 			PhotoPosition = Position(Width/2-3.0,Height/2-5.0);
 			Player2Wins.SetPosition(PhotoPosition);
 			Player2Wins.Draw();
 		}
 		else{
-			CpuWins.Load("WinCPU.xpm");
+			CpuWins.Load("Images/WinCPU.xpm");
 			PhotoPosition = Position(Width/2-3.0,Height/2-5.0);
 			CpuWins.SetPosition(PhotoPosition);
 			CpuWins.Draw();

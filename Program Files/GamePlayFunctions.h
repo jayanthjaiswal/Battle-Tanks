@@ -77,14 +77,14 @@ void GameLoad(){
 	PocketTanks.RenderText( Position(Width*5/7, Height/30) , Position(Width*6/7, Height*2/30), HealthChar, White, Black);
 
 	//loop to load bitmaps of the selected weapons 	
-		    WeaponIcon[0].Load("WeaponIcon0.xpm");
+		    WeaponIcon[0].Load("Images/WeaponIcon0.xpm");
 		    WeaponIcon[0].SetPosition( Position(Width*(12)/28 - 0.5*WeaponIcon[0].GetWidth(), Height*26/30 - 0.4*WeaponIcon[0].GetHeight()));
 		    WeaponIcon[0].Draw();
 	char WeaponIconNumber[16];
 	if(PlayerNumber==1){
 	    for(int i=0,j=2; i<5; i++, j+=2){
 		     if (Player1Chance[i]==0){
-			    sprintf(WeaponIconNumber,"WeaponIcon%d.xpm",Player1Weapons[i]);
+			    sprintf(WeaponIconNumber,"Images/WeaponIcon%d.xpm",Player1Weapons[i]);
 				WeaponIcon[Player1Weapons[i]].Load(WeaponIconNumber);
 				WeaponIcon[Player1Weapons[i]].SetPosition(Position(Width*(12+j)/28 - 0.5*WeaponIcon[Player1Weapons[i]].GetWidth(), Height*26/30 - 0.4*WeaponIcon[Player1Weapons[i]].GetHeight()));
 				WeaponIcon[Player1Weapons[i]].Draw();
@@ -94,7 +94,7 @@ void GameLoad(){
     else if(PlayerNumber==2){
 		 for(int i=0,j=2; i<5; i++, j+=2){
 			if (Player2Chance[i]==0){	
-				sprintf(WeaponIconNumber,"WeaponIcon%d.xpm",Player2Weapons[i]);
+				sprintf(WeaponIconNumber,"Images/WeaponIcon%d.xpm",Player2Weapons[i]);
 				WeaponIcon[Player2Weapons[i]].Load(WeaponIconNumber);
 				WeaponIcon[Player2Weapons[i]].SetPosition(Position(Width*(12+j)/28 - 0.5*WeaponIcon[Player2Weapons[i]].GetWidth(), Height*26/30 - 0.4*WeaponIcon[Player2Weapons[i]].GetHeight()));
 				WeaponIcon[Player2Weapons[i]].Draw();
@@ -104,7 +104,7 @@ void GameLoad(){
 	else{
 		for(int i=0,j=2; i<5; i++, j+=2){
 			if (CpuChance[i]==0){	
-				sprintf(WeaponIconNumber,"WeaponIcon%d.xpm",CpuWeapons[i]);
+				sprintf(WeaponIconNumber,"Images/WeaponIcon%d.xpm",CpuWeapons[i]);
 				WeaponIcon[CpuWeapons[i]].Load(WeaponIconNumber);
 				WeaponIcon[CpuWeapons[i]].SetPosition(Position(Width*(12+j)/28 - 0.5*WeaponIcon[CpuWeapons[i]].GetWidth(), Height*26/30 - 0.4*WeaponIcon[CpuWeapons[i]].GetHeight()));
 				WeaponIcon[CpuWeapons[i]].Draw();
@@ -113,7 +113,7 @@ void GameLoad(){
 	}
 	
 	SelectedWeapon=0;
-	WeaponName[0].Load("WeaponName0.xpm");
+	WeaponName[0].Load("Images/WeaponName0.xpm");
 	WeaponName[0].SetPosition(Position(Width*18/28 - 0.5*WeaponName[0].GetWidth(), Height*28/30 - 0.3*WeaponName[0].GetHeight()));
     WeaponName[0].Draw();
     
@@ -132,7 +132,7 @@ void SelectWeapon (){
     char NameBmp[20];
     int j;
     if(WeaponIcon[0].IsInside(MouseClick)){
-        WeaponName[0].Load("WeaponName0.xpm"); 
+        WeaponName[0].Load("Images/WeaponName0.xpm"); 
 		WeaponName[0].SetPosition(Position(Width*18/28 - 0.5*WeaponName[0].GetWidth(), Height*28/30 - 0.3*WeaponName[0].GetHeight()));
 		WeaponName[0].Draw();
 		SelectedWeapon = 0;
@@ -140,8 +140,8 @@ void SelectWeapon (){
 	else{
         for(int i=0;i<=8;i++){
         
-            sprintf(IconBmp,"WeaponIcon%d.xpm",i);
-            sprintf(NameBmp,"WeaponName%d.xpm",i);
+            sprintf(IconBmp,"Images/WeaponIcon%d.xpm",i);
+            sprintf(NameBmp,"Images/WeaponName%d.xpm",i);
 		    if(WeaponIcon[i].IsInside(MouseClick)){
 		            if (PlayerNumber==1){
 					    for ( j=0;j<5;j++){

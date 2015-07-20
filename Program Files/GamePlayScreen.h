@@ -8,14 +8,14 @@ void GamePlayScreen(){
 	        n=7;
 	        
 	        PlayerNumber=1;
-			TerrainTexture.Load("Terrain.xpm");
-			InputBackground.Load("InputBackground.xpm");
-			PowerBMP.Load("Power.xpm");
-			AngleBMP.Load("Angle.xpm");
-			Fire.Load("Fire.xpm");
-			TankBMP1.Load("Tank1.xpm");
-			TankBMP2.Load("Tank2.xpm");
-			Sky.Load("Sky.xpm");
+			TerrainTexture.Load("Images/Terrain.xpm");
+			InputBackground.Load("Images/InputBackground.xpm");
+			PowerBMP.Load("Images/Power.xpm");
+			AngleBMP.Load("Images/Angle.xpm");
+			Fire.Load("Images/Fire.xpm");
+			TankBMP1.Load("Images/Tank1.xpm");
+			TankBMP2.Load("Images/Tank2.xpm");
+			Sky.Load("Images/Sky.xpm");
 
 	GameLoad();
 

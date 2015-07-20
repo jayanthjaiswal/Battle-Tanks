@@ -5,7 +5,7 @@ void wait (float seconds )
   while (clock() < endwait){}
 }
 
-#define Steps 30
+#define Steps 100
 
 void BmpMove(BitMap &Image,const Position &Start,const Position &End){
     float StartX=Start.GetXDistance();

@@ -1,0 +1,49 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Header File
+   FILE:        lellipse.h
+   AUTHORS:     James P. Cohoon and Jack W. Davidson
+   EDITED BY:   Devon Lockwood
+   Time-stamp:  <97/01/17 18:18:20 dcl3a>
+
+   Description
+   ===========
+   The LabeledEllipseShape class provides the ability to draw ellipses 
+   with text labels in an EzWindow.
+*/
+#ifndef LABELEDELLIPSE_H
+#define LABELEDELLIPSE_H
+
+#include "label.h"
+#include "ellipse.h"
+
+
+class LabeledEllipseShape : public Label, public EllipseShape {
+   public:
+      LabeledEllipseShape(SimpleWindow   &w, 
+                          const Position &Center, 
+                          const color    &c      = Red,
+                          const string   &Text   = "R",
+                          float           Length = 1,
+		          float           Height = 2);
+      
+      void Draw();
+};
+
+
+#endif

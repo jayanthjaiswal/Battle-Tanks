@@ -8,24 +8,24 @@ void GameMenuScreen(){
     ClearScreen(); //Previously defined function
     //The following Loads bitmap images of various components of the 
     //Game Menu Screen
-    Background.Load("Background.xpm");
+    Background.Load("Images/Background.xpm");
     Background.SetPosition(Position(0,0));
 	Background.Draw();
     //The following codes display the buttons(The bitmaps which says 
     //Single Player, Double Player, etc.)
-    SinglePlayer.Load("SinglePlayer.xpm");
+    SinglePlayer.Load("Images/SinglePlayer.xpm");
     BmpMove(SinglePlayer,Position(-5,Height/8*2),Position(Width/10,Height/8*2));
 	
-    DoublePlayer.Load("DoublePlayer.xpm");
+    DoublePlayer.Load("Images/DoublePlayer.xpm");
     BmpMove(DoublePlayer,Position(-5,Height/8*3),Position(Width/10,Height/8*3));
 
-    Instructions.Load("Instructions.xpm");
+    Instructions.Load("Images/Instructions.xpm");
     BmpMove(Instructions,Position(-5,Height/8*4),Position(Width/10,Height/8*4));
 	
-    HighScores.Load("HighScores.xpm");
+    HighScores.Load("Images/HighScores.xpm");
     BmpMove(HighScores,Position(-5,Height/8*5),Position(Width/10,Height/8*5));
 	
-    Exit.Load("Exit.xpm");
+    Exit.Load("Images/Exit.xpm");
     BmpMove(Exit,Position(-5,Height/8*6),Position(Width/10,Height/8*6));
 }
 
@@ -38,56 +38,56 @@ void SinglePlayerScreen(){//Player selects type of tank and difficulty level aft
     ClearScreen();//To clear screen by erasing all the previously loaded bitmaps
     
     //Loadinh Bitmaps for the Tanks Selection and for Difficulty level selection
-    TankTypeScreen.Load("TankTypeScreen.xpm");
+    TankTypeScreen.Load("Images/TankTypeScreen.xpm");
     TankTypeScreen.SetPosition(Position(-1.5,-1.5));
     TankTypeScreen.Draw();
     //Loading various tank bitmaps
-    TankNameOffensive1.Load("TankNameOffensive.xpm");
+    TankNameOffensive1.Load("Images/TankNameOffensive.xpm");
     TankNameOffensive1.SetPosition(Position(Width/5, Height*3/8) +Position(-0.5*TankNameOffensive1.GetWidth(),-0.5*TankNameOffensive1.GetHeight()));
 	TankNameOffensive1.Draw();
     
-    TankNameDefensive1.Load("TankNameDefensive.xpm");
+    TankNameDefensive1.Load("Images/TankNameDefensive.xpm");
     TankNameDefensive1.SetPosition(Position(Width/2, Height*3/8) +Position(-0.5*TankNameDefensive1.GetWidth(),-0.5*TankNameDefensive1.GetHeight()));
 	TankNameDefensive1.Draw();
 	
-    TankNameNormal1.Load("TankNameNormal.xpm");
+    TankNameNormal1.Load("Images/TankNameNormal.xpm");
     TankNameNormal1.SetPosition(Position(Width*4/5, Height*3/8) +Position(-0.5*TankNameNormal1.GetWidth(),-0.5*TankNameNormal1.GetHeight()));
 	TankNameNormal1.Draw();
 
-    TankImageOffensive1.Load("TankImageOffensive.xpm");
+    TankImageOffensive1.Load("Images/TankImageOffensive.xpm");
     TankImageOffensive1.SetPosition(Position(Width/5, Height/6) +Position(-0.5*TankImageOffensive1.GetWidth(),-0.5*TankImageOffensive1.GetHeight()));
 	TankImageOffensive1.Draw();
     
-    TankImageDefensive1.Load("TankImageDefensive.xpm");
+    TankImageDefensive1.Load("Images/TankImageDefensive.xpm");
     TankImageDefensive1.SetPosition(Position(Width/2, Height/6) +Position(-0.5*TankImageDefensive1.GetWidth(),-0.5*TankImageDefensive1.GetHeight()));
 	TankImageDefensive1.Draw();
 	
-    TankImageNormal1.Load("TankImageNormal.xpm");
+    TankImageNormal1.Load("Images/TankImageNormal.xpm");
     TankImageNormal1.SetPosition(Position(Width*4/5, Height/6) +Position(-0.5*TankImageNormal1.GetWidth(),-0.5*TankImageNormal1.GetHeight()));
 	TankImageNormal1.Draw();
 	//Loading the difficulty level bitmaps
-	SelectDifficulty.Load("SelectDifficulty.xpm");
+	SelectDifficulty.Load("Images/SelectDifficulty.xpm");
     SelectDifficulty.SetPosition(Position(Width/2, Height/2) +Position(-0.5*SelectDifficulty.GetWidth(),-0.5*SelectDifficulty.GetHeight()));
 	SelectDifficulty.Draw();
 	
-	DifficultyEasy.Load("DifficultyEasy.xpm");
+	DifficultyEasy.Load("Images/DifficultyEasy.xpm");
     DifficultyEasy.SetPosition(Position(Width/5, Height*5/8) +Position(-0.5*DifficultyEasy.GetWidth(),-0.5*DifficultyEasy.GetHeight()));
 	DifficultyEasy.Draw();
 	
-	DifficultyMedium.Load("DifficultyMedium.xpm");
+	DifficultyMedium.Load("Images/DifficultyMedium.xpm");
     DifficultyMedium.SetPosition(Position(Width/2, Height*5/8) +Position(-0.5*DifficultyMedium.GetWidth(),-0.5*DifficultyMedium.GetHeight()));
 	DifficultyMedium.Draw();
 
-    DifficultyHard.Load("DifficultyHard.xpm");
+    DifficultyHard.Load("Images/DifficultyHard.xpm");
     DifficultyHard.SetPosition(Position(Width*4/5, Height*5/8) +Position(-0.5*DifficultyHard.GetWidth(),-0.5*DifficultyHard.GetHeight()));
 	DifficultyHard.Draw();
 
-    Back1.Load("Back1.xpm");
+    Back1.Load("Images/Back1.xpm");
     PhotoPosition = Position(Width/4,Height/8*7) + Position(-0.5*Back1.GetWidth(),-0.5*Back1.GetHeight());
     Back1.SetPosition(PhotoPosition);
 	Back1.Draw();
 	
-    Continue1.Load("Continue1.xpm");
+    Continue1.Load("Images/Continue1.xpm");
     PhotoPosition = Position(Width*3/8,Height/8*7) + Position(-0.5*Continue1.GetWidth(),-0.5*Continue1.GetHeight());
     Continue1.SetPosition(PhotoPosition);
 	Continue1.Draw();
@@ -105,70 +105,70 @@ void DoublePlayerScreen(){//This function allows both players to select differen
 
     PocketTanks.RenderRectangle(Position(0,0),Position(Width,Height),Black,True);
 
-    CaptionPlayer1.Load("CaptionPlayer1.xpm");
+    CaptionPlayer1.Load("Images/CaptionPlayer1.xpm");
     CaptionPlayer1.SetPosition(Position(Width/2, Height/20) +Position(-0.5*CaptionPlayer1.GetWidth(),-0.5*CaptionPlayer1.GetHeight()));
 	CaptionPlayer1.Draw();
 
-    CaptionPlayer2.Load("CaptionPlayer2.xpm");
+    CaptionPlayer2.Load("Images/CaptionPlayer2.xpm");
     CaptionPlayer2.SetPosition(Position(Width/2, Height*9.5/20) +Position(-0.5*CaptionPlayer2.GetWidth(),-0.5*CaptionPlayer2.GetHeight()));
 	CaptionPlayer2.Draw();
 
-    TankNameOffensive1.Load("TankNameOffensive.xpm");
+    TankNameOffensive1.Load("Images/TankNameOffensive.xpm");
     TankNameOffensive1.SetPosition(Position(Width/5, Height*3/8) +Position(-0.5*TankNameOffensive1.GetWidth(),-0.5*TankNameOffensive1.GetHeight()));
 	TankNameOffensive1.Draw();
     
-    TankNameDefensive1.Load("TankNameDefensive.xpm");
+    TankNameDefensive1.Load("Images/TankNameDefensive.xpm");
     TankNameDefensive1.SetPosition(Position(Width/2, Height*3/8) +Position(-0.5*TankNameDefensive1.GetWidth(),-0.5*TankNameDefensive1.GetHeight()));
 	TankNameDefensive1.Draw();
 	
-    TankNameNormal1.Load("TankNameNormal.xpm");
+    TankNameNormal1.Load("Images/TankNameNormal.xpm");
     TankNameNormal1.SetPosition(Position(Width*4/5, Height*3/8) +Position(-0.5*TankNameNormal1.GetWidth(),-0.5*TankNameNormal1.GetHeight()));
 	TankNameNormal1.Draw();
 
-    TankImageOffensive1.Load("TankImageOffensive.xpm");
+    TankImageOffensive1.Load("Images/TankImageOffensive.xpm");
     TankImageOffensive1.SetPosition(Position(Width/5, Height*5/24) +Position(-0.5*TankImageOffensive1.GetWidth(),-0.5*TankImageOffensive1.GetHeight()));
 	TankImageOffensive1.Draw();
     
-    TankImageDefensive1.Load("TankImageDefensive.xpm");
+    TankImageDefensive1.Load("Images/TankImageDefensive.xpm");
     TankImageDefensive1.SetPosition(Position(Width/2, Height*5/24) +Position(-0.5*TankImageDefensive1.GetWidth(),-0.5*TankImageDefensive1.GetHeight()));
 	TankImageDefensive1.Draw();
 	
-    TankImageNormal1.Load("TankImageNormal.xpm");
+    TankImageNormal1.Load("Images/TankImageNormal.xpm");
     TankImageNormal1.SetPosition(Position(Width*4/5, Height*5/24) +Position(-0.5*TankImageNormal1.GetWidth(),-0.5*TankImageNormal1.GetHeight()));
 	TankImageNormal1.Draw();
 
-    TankNameOffensive2.Load("TankNameOffensive.xpm");
+    TankNameOffensive2.Load("Images/TankNameOffensive.xpm");
     TankNameOffensive2.SetPosition(Position(Width/5, Height*19/24) +Position(-0.5*TankNameOffensive2.GetWidth(),-0.5*TankNameOffensive2.GetHeight()));
 	TankNameOffensive2.Draw();
     
-    TankNameDefensive2.Load("TankNameDefensive.xpm");
+    TankNameDefensive2.Load("Images/TankNameDefensive.xpm");
     TankNameDefensive2.SetPosition(Position(Width/2, Height*19/24) +Position(-0.5*TankNameDefensive2.GetWidth(),-0.5*TankNameDefensive2.GetHeight()));
 	TankNameDefensive2.Draw();
 	
-    TankNameNormal2.Load("TankNameNormal.xpm");
+    TankNameNormal2.Load("Images/TankNameNormal.xpm");
     TankNameNormal2.SetPosition(Position(Width*4/5, Height*19/24) +Position(-0.5*TankNameNormal2.GetWidth(),-0.5*TankNameNormal2.GetHeight()));
 	TankNameNormal2.Draw();
 
-    TankImageOffensive2.Load("TankImageOffensive.xpm");
+    TankImageOffensive2.Load("Images/TankImageOffensive.xpm");
     TankImageOffensive2.SetPosition(Position(Width/5, Height*15/24) +Position(-0.5*TankImageOffensive2.GetWidth(),-0.5*TankImageOffensive2.GetHeight()));
 	TankImageOffensive2.Draw();
     
-    TankImageDefensive2.Load("TankImageDefensive.xpm");
+    TankImageDefensive2.Load("Images/TankImageDefensive.xpm");
     TankImageDefensive2.SetPosition(Position(Width/2, Height*15/24) +Position(-0.5*TankImageDefensive2.GetWidth(),-0.5*TankImageDefensive2.GetHeight()));
 	TankImageDefensive2.Draw();
 	
-    TankImageNormal2.Load("TankImageNormal.xpm");
+    TankImageNormal2.Load("Images/TankImageNormal.xpm");
     TankImageNormal2.SetPosition(Position(Width*4/5, Height*15/24) +Position(-0.5*TankImageNormal2.GetWidth(),-0.5*TankImageNormal2.GetHeight()));
 	TankImageNormal2.Draw();
 
     
     
-    Back2.Load("Back2.xpm"); 
+    Back2.Load("Images/Back2.xpm"); 
     PhotoPosition = Position(Width/4,Height/8*7.5) + Position(-0.5*Back2.GetWidth(),-0.5*Back2.GetHeight());
     Back2.SetPosition(PhotoPosition);
 	Back2.Draw();
 	//The following is the code for loading bitmaps for second player screem
-    Continue2.Load("Continue2.xpm");
+    Continue2.Load("Images/Continue2.xpm");
     PhotoPosition = Position(Width/4*3,Height/8*7.5) + Position(-0.5*Continue2.GetWidth(),-0.5*Continue2.GetHeight());
     Continue2.SetPosition(PhotoPosition);
 	Continue2.Draw();
@@ -182,11 +182,11 @@ void InstructionsScreen(){
 	n=8;//n=8 represents instruction screen
 	ClearScreen();
 	//Loads the main instruction Bitmap
-	InstructionsWindow.Load("InstructionsWindow.xpm");
+	InstructionsWindow.Load("Images/InstructionsWindow.xpm");
     InstructionsWindow.SetPosition(Position(0,0));
 	InstructionsWindow.Draw();
-	//Loading the "BACK" button.
-	Back3.Load("Back3.xpm"); 
+	//Loading the "Images/BACK" button.
+	Back3.Load("Images/Back3.xpm"); 
     PhotoPosition = Position(Width/24*9.5,Height/8*7.1) + Position(-0.5*Back3.GetWidth(),-0.5*Back3.GetHeight());
     Back3.SetPosition(PhotoPosition);
 	Back3.Draw();
@@ -198,7 +198,7 @@ void HighScoresScreen(){
 	n=9;//n=9 represents High Score screen.
     ClearScreen();
 	//displaing the background
-	HighScoresBackground.Load("HighScoresScreen.xpm");
+	HighScoresBackground.Load("Images/HighScoresScreen.xpm");
 	HighScoresBackground.SetPosition(Position(0,0));
 	HighScoresBackground.Draw();
 
@@ -215,7 +215,7 @@ void HighScoresScreen(){
 	 Result, Black);
 	}
 	//loading the required bitmaps for the buttons
-    Back4.Load("Back4.xpm"); 
+    Back4.Load("Images/Back4.xpm"); 
     PhotoPosition = Position(Width*2/3,Height/8*7.1) + Position(-0.5*Back4.GetWidth(),-0.5*Back4.GetHeight());
     Back4.SetPosition(PhotoPosition);
 	Back4.Draw();

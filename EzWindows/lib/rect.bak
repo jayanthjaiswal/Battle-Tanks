@@ -1,0 +1,87 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Source File
+   FILE:        rect.cc
+   AUTHORS:     James P. Cohoon and Jack W. Davidson
+   EDITED BY:   Devon Lockwood
+   Time-stamp:  <97/01/17 18:42:55 dcl3a>
+
+   Description
+   ===========
+   The RectangleShape class provides the ability to draw
+   rectangles in an EzWindow.
+*/
+#include <assert.h>
+#include "rect.h"
+
+
+RectangleShape::RectangleShape(SimpleWindow &Window,
+ const Position &Center, const color &c, float w,
+ float h) : Shape(Window, Center, c),
+ Width(w), Height(h) {
+	// No code needed
+}
+
+RectangleShape::RectangleShape(SimpleWindow &Window,
+ float XPosition, float YPosition,
+ const color &c, float w, float h) : Shape(Window,
+ Position(XPosition, YPosition), c),
+ Width(w), Height(h) {
+	// No code needed
+ }
+
+float RectangleShape::GetWidth() const {
+	return Width;
+}
+
+float RectangleShape::GetHeight() const {
+	return Height;
+}
+
+void RectangleShape::GetSize(float &W, float &H) const {
+	W = Width;
+   H = Height;
+   return;
+}
+
+void RectangleShape::Draw() {
+	const Position Center = GetPosition();
+
+	Position UpperLeft = Center + Position(-.5f * Width, -.5f * Height);
+	Position LowerRight = Center + Position(.5f * Width, .5f * Height);
+	GetWindow().RenderRectangle(UpperLeft, LowerRight,
+    GetColor(), HasBorder());
+   return;
+}
+
+void RectangleShape::SetSize(float W, float H) {
+	Width = W;
+	Height = H;
+   return;
+}
+
+void RectangleShape::Erase() {
+	const Position Center = GetPosition();
+
+	Position UpperLeft = Center + Position(-.5f * Width, -.5f * Height);
+	Position LowerRight = Center + Position(.5f * Width, .5f * Height);
+	GetWindow().RenderRectangle(UpperLeft, LowerRight,
+	 White, HasBorder());
+   return;
+}
+

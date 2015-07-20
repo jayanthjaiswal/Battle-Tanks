@@ -218,15 +218,15 @@ int MouseClickEvent(const Position &MousePosition){
 			}
 			else if(Fire.IsInside(MousePosition)){FireWeapon();}
 			else if(Player1Wins.IsInside(MousePosition)|| Player2Wins.IsInside(MousePosition)||CpuWins.IsInside(MousePosition)){
-				GameOver.Load("Exit1.xpm");
+				GameOver.Load("Images/Exit1.xpm");
 				PhotoPosition = Position(Width/2-3.0,Height/2-5.0) ;
 				GameOver.SetPosition(PhotoPosition);
 				GameOver.Draw();
-				Yes.Load("yes.xpm");
+				Yes.Load("Images/yes.xpm");
 				PhotoPosition = Position(Width/2-1.3,Height/2-3.5) ;
 				Yes.SetPosition(PhotoPosition);
 				Yes.Draw();
-				No.Load("no.xpm");
+				No.Load("Images/no.xpm");
 				PhotoPosition = Position(Width/2+0.7,Height/2-3.5) ;
 				No.SetPosition(PhotoPosition);
 				No.Draw();		

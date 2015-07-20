@@ -1,0 +1,45 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Source File
+   FILE:        lellipse.cc
+   AUTHOR:      
+   Time-stamp:  <97/01/17 18:18:09 dcl3a>
+
+   Description
+   ===========
+*/
+#include "lellipse.h"
+
+
+LabeledEllipseShape::LabeledEllipseShape(SimpleWindow   &w,
+                                         const Position &Center, 
+                                         const color    &c,
+                                         const string   &t, 
+                                         float           l,
+                                         float           h) 
+                                       : EllipseShape(w, Center, c, l, h),
+                                         Label(w, Center, t, c)  {
+	// No code needed
+}
+
+
+void LabeledEllipseShape::Draw() {
+
+   EllipseShape::Draw();
+   Label::Draw();
+}

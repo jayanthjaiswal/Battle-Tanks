@@ -23,7 +23,7 @@ CC       = g++
 # definition of EZWINDIR, and uncomment the following line
 
 EZWINDIR = ../EzWindows
-X11DIR   = /usr/X11R6
+X11DIR   = /usr/lib/x86_64-linux-gnu
 
 # The CPPFLAGS macro lets the compiler know where to find include files
 
@@ -31,8 +31,8 @@ CPPFLAGS=-I$(X11DIR)/include -I$(EZWINDIR)/include
 
 # The LDFLAGS macro lets the linker know where to find library files
 
-LDFLAGS=-L$(X11DIR)/lib -lX11 -L$(EZWINDIR)/lib -lezwin  -lXpm
-LDFLAGS=-L$(X11DIR)/lib -lX11 -L$(EZWINDIR)/lib -lezwin /usr/lib/libXpm.so.4 
+LDFLAGS=-L$(X11DIR) -lX11 -L$(X11DIR) -lXpm -L$(EZWINDIR)/lib -lezwin -L$(X11DIR) -lX11 -L$(X11DIR) -lXpm
+#LDFLAGS=-L$(X11DIR)/lib -lX11 -L$(EZWINDIR)/lib -lezwin /usr/lib/libXpm.so.4 
 
 
 # The OBJS macro tells the compiler which object files need to be present

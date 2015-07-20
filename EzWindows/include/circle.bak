@@ -1,0 +1,50 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Header File
+   FILE:        circle.h
+   AUTHORS:     James P. Cohoon and Jack W. Davidson
+   EDITED BY:   Devon Lockwood
+   Time-stamp:  <96/12/13 14:16:32 dcl3a>
+
+   Description
+   ===========
+   The CircleShape class provides the ability to draw circles 
+   in an EzWindow.
+*/
+#ifndef CIRCLESHAPE_H
+#define CIRCLESHAPE_H
+
+#include "shape.h"
+
+
+class CircleShape : public Shape {
+   public:
+      CircleShape(SimpleWindow   &w,
+       const Position &Center, const color &c = Red,
+       float Diameter = 1.0);
+      void SetSize(float Diameter);
+      float GetDiameter() const;
+      void Draw();
+      void Erase();
+   private:
+      float Diameter;
+};
+
+
+#endif
+

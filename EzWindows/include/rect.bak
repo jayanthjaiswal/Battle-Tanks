@@ -1,0 +1,56 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Header File
+   FILE:        rect.h
+   AUTHORS:     James P. Cohoon and Jack W. Davidson
+   EDITED BY:   Devon Lockwood
+   Time-stamp:  <97/01/17 18:43:03 dcl3a>
+
+   Description
+   ===========
+   The RectangleShape class provides the ability to draw
+   rectangles in an EzWindow.
+*/
+#ifndef RECTSHAPE_H
+#define RECTSHAPE_H
+
+#include "shape.h"
+
+
+class RectangleShape : public Shape {
+   public:
+      RectangleShape(SimpleWindow &Window,
+       const Position &Center, const color &c = Red,
+       float Length = 1.0, float Width  = 2.0);
+      RectangleShape(SimpleWindow &w,
+       float XCoord, float YCoord,
+       const color &c = Red, float Length = 1.0,
+       float Width  = 2.0);
+      float GetWidth () const;
+      float GetHeight () const;
+      void GetSize(float &iLength, float &iWidth);
+      void SetSize(float iLength, float iWidth);
+      void Draw();
+      void Erase();
+   private:
+      float Width;
+      float Height;
+};
+
+
+#endif

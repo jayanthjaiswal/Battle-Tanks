@@ -1,0 +1,50 @@
+//**************************************************************************
+//
+// Copyright (c) 1997.
+//      Richard D. Irwin, Inc.
+//
+// This software may not be distributed further without permission from
+// Richard D. Irwin, Inc.
+//
+// This software is distributed WITHOUT ANY WARRANTY. No claims are made
+// as to its functionality or purpose.
+//
+// Author: Devon Lockwood
+// Date: 1/30/97
+// $Revision: 1.1 $
+// $Name: $
+//
+//**************************************************************************
+/* EzWindows Library Header File
+   FILE:        square.h
+   AUTHORS:     James P. Cohoon and Jack W. Davidson
+   EDITED BY:   Devon Lockwood
+   Time-stamp:  <97/01/17 18:51:22 dcl3a>
+
+   Description
+   ===========
+   The SquareShape class provides the ability to draw
+   squares in an EzWindow.
+*/
+#ifndef SQUARESHAPE_H
+#define SQUARESHAPE_H
+
+#include "shape.h"
+
+
+class SquareShape : public Shape {
+   public:
+      SquareShape(SimpleWindow &Window,
+       const Position &Center, const color &c = Red,
+       float Side  = 1);
+      float GetSideLength() const;
+      void SetSize(float SideLength);
+      void Draw();
+      void Erase();
+   private:
+      float SideLength;
+};
+
+
+#endif
+
