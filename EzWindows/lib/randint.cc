@@ -15,10 +15,12 @@
 // $Name: $
 //
 //**************************************************************************
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 #include "randint.h"
+
+using namespace std;
 
 // RandomInt(): default pseudorandom number sequence
 // constructor (both parameters are optional)

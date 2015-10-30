@@ -17,9 +17,11 @@
 
 // Implementation of Randomize and Uniform
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include <time.h>
 #include "uniform.h"
+
+using namespace std;
 
 // Randomize(): set the random number generator seed
 void InitializeSeed() {
